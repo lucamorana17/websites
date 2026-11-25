@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malermeister Claus J. Meissner – Malerbetrieb in Frankfurt am Main</title>
+<meta name="description" content="Meisterbetrieb für Maler- und Lackierarbeiten in Frankfurt am Main: Innenanstrich, Fassade, Tapezieren, Lackierarbeiten. Kostenlose Beratung vor Ort.">
+<style>
+/* Systemschriften: keine externen Fonts -> DSGVO-freundlich, schnell */
+:root{
+  --ink:#1d2a3a; --ink-2:#2f4157; --paper:#faf7f2; --card:#fff; --line:#e6dfd3;
+  --ochre:#d99a2b; --ochre-d:#b67d17; --text:#2a2a2a; --muted:#6b6b6b;
+  --radius:14px; --max:1140px;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.ph{background:#fff3cd;border:1px dashed var(--ochre);border-radius:4px;padding:0 4px;color:#7a5200;font-style:normal}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.2;font-weight:700}
+h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:.6rem}
+.eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre-d);font-weight:700;margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:640px}
+section{padding:88px 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;cursor:pointer;font-size:1rem}
+.btn-primary{background:var(--ochre);color:#1d1400}
+.btn-primary:hover{background:var(--ochre-d);color:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:10px;background:var(--ink);display:grid;place-items:center;color:var(--ochre);font-family:var(--serif);font-weight:700;font-size:1.3rem}
+.logo b{font-family:var(--serif);color:var(--ink);font-size:1.1rem;display:block;line-height:1.1}
+.logo small{color:var(--muted);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.menu{display:flex;gap:28px;align-items:center;list-style:none}
+.menu a{text-decoration:none;font-weight:600;color:var(--ink-2);font-size:.95rem}
+.menu a:hover{color:var(--ochre-d)}
+.menu .btn{padding:10px 18px;font-size:.9rem}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 8px;transition:.2s}
+
+/* Hero */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:110px 0 120px}
+.hero::before{content:"";position:absolute;right:-120px;top:-80px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(217,154,43,.35),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative}
+.hero h1{color:#fff;font-size:clamp(2.3rem,5.2vw,3.9rem);margin-bottom:1.2rem}
+.hero h1 em{color:var(--ochre);font-style:italic}
+.hero p{color:#cdd6e2;font-size:1.15rem;max-width:540px;margin-bottom:2rem}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;gap:28px;margin-top:2.6rem;flex-wrap:wrap}
+.trust div{font-size:.9rem;color:#cdd6e2}
+.trust strong{display:block;color:#fff;font-family:var(--serif);font-size:1.5rem}
+.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;transform:rotate(-4deg)}
+.sw{aspect-ratio:3/4;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.3);position:relative;overflow:hidden}
+.sw::after{content:attr(data-name);position:absolute;left:0;right:0;bottom:0;background:#fff;color:#333;font-size:.72rem;padding:8px 10px;font-weight:600}
+.sw:nth-child(3n+2){transform:translateY(28px)}
+
+/* Leistungen */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:2.6rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(29,42,58,.08);border-color:var(--ochre)}
+.icon{width:52px;height:52px;border-radius:12px;background:#fbefd8;display:grid;place-items:center;margin-bottom:18px}
+.icon svg{width:26px;height:26px;stroke:var(--ochre-d);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.25rem;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.96rem}
+
+/* Ablauf */
+.steps-sec{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:2.6rem;counter-reset:s}
+.step{position:relative;padding-top:64px}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;top:0;left:0;font-family:var(--serif);font-size:2.6rem;color:var(--ochre);font-weight:700}
+.step h3{font-size:1.15rem;margin-bottom:.4rem}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* Über uns */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.photo-ph{aspect-ratio:4/5;border-radius:var(--radius);background:repeating-linear-gradient(45deg,#efe8db 0 14px,#e8dfcf 14px 28px);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.95rem;padding:20px;border:1px dashed #cbbfa8}
+.checks{list-style:none;margin-top:1.4rem;display:grid;gap:12px}
+.checks li{padding-left:34px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;background:var(--ochre) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d1400' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
+
+/* Referenzen */
+.refs{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:2.6rem}
+.refs .photo-ph{aspect-ratio:auto;font-size:.85rem}
+.refs .big{grid-column:span 2;grid-row:span 2}
+
+/* Gebiet */
+.area{background:var(--ink);color:#fff}
+.area h2{color:#fff}
+.area .lead{color:#cdd6e2}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.8rem}
+.chips span{border:1px solid rgba(255,255,255,.25);padding:8px 16px;border-radius:999px;font-size:.92rem}
+
+/* Kontakt */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+.info{display:grid;gap:18px;margin-top:1.6rem}
+.info div{display:flex;gap:14px;align-items:flex-start}
+.info .icon{margin:0;flex:0 0 46px;width:46px;height:46px}
+.info small{display:block;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+.info a{text-decoration:none;font-weight:600}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:.85rem;font-weight:600;color:var(--ink-2);display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper);width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ochre);border-color:transparent}
+.consent{display:flex;gap:10px;font-weight:400;font-size:.85rem;color:var(--muted);align-items:flex-start;grid-template-columns:none}
+.consent input{width:auto;margin-top:4px}
+
+footer{background:#141e2a;color:#9aa8b8;padding:48px 0 28px;font-size:.92rem}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer a{color:#cdd6e2;text-decoration:none;margin-right:18px}
+footer a:hover{color:var(--ochre)}
+.copy{border-top:1px solid #26323f;margin-top:30px;padding-top:20px;font-size:.82rem}
+
+.mobile-call{display:none}
+.reveal{opacity:0;transform:translateY(20px);transition:.6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero{padding:70px 0 90px}
+  .hero-grid,.about,.contact{grid-template-columns:1fr;gap:40px}
+  .swatches{max-width:380px}
+  .grid3{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .refs{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .burger{display:block}
+  .menu{position:fixed;inset:72px 0 auto 0;background:var(--paper);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.3s}
+  .menu.open{transform:none}
+  .mobile-call{display:flex;position:fixed;bottom:16px;left:16px;right:16px;z-index:60;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  body{padding-bottom:80px}
+}
+@media (max-width:560px){
+  .grid3,.steps,.row{grid-template-columns:1fr}
+  .refs .big{grid-column:span 2;grid-row:span 1}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Startseite">
+      <span class="logo-mark">M</span>
+      <span><b>Claus J. Meissner</b><small>Malermeister · Frankfurt</small></span>
+    </a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="menu">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#referenzen">Referenzen</a></li>
+      <li><a href="#kontakt" class="btn btn-primary">Angebot anfragen</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Meisterbetrieb in Frankfurt am Main</span>
+      <h1>Farbe, die <em>bleibt</em>.<br>Handwerk, das überzeugt.</h1>
+      <p>Ob Wohnung, Treppenhaus oder Fassade – wir streichen, tapezieren und lackieren sauber, pünktlich und zum fairen Festpreis.</p>
+      <div class="hero-ctas">
+        <a href="#kontakt" class="btn btn-primary">Kostenloses Angebot</a>
+        <a href="tel:+4969000000" class="btn btn-ghost">☎ 069 <i class="ph">Nummer</i></a>
+      </div>
+      <div class="trust">
+        <div><strong><i class="ph">XX</i> Jahre</strong>Erfahrung</div>
+        <div><strong>Meister</strong>betrieb</div>
+        <div><strong>Festpreis</strong>ohne Überraschungen</div>
+      </div>
+    </div>
+    <div class="swatches" aria-hidden="true">
+      <div class="sw" data-name="Kalkweiß" style="background:#f2eee6"></div>
+      <div class="sw" data-name="Ocker" style="background:#d99a2b"></div>
+      <div class="sw" data-name="Salbei" style="background:#9aab8f"></div>
+      <div class="sw" data-name="Taubenblau" style="background:#7d93a8"></div>
+      <div class="sw" data-name="Terrakotta" style="background:#c06b4a"></div>
+      <div class="sw" data-name="Anthrazit" style="background:#3d4248"></div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="wrap">
+    <span class="eyebrow">Leistungen</span>
+    <h2>Alles rund um Wand, Decke und Fassade</h2>
+    <p class="lead">Vom einzelnen Zimmer bis zum kompletten Mehrfamilienhaus – für Privatkunden, Hausverwaltungen und Gewerbe.</p>
+    <div class="grid3">
+      <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="14" height="6" rx="1"/><path d="M17 6h3v5h-8v3"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg></div><h3>Innenanstrich</h3><p>Wände und Decken in Wohnungen, Büros und Treppenhäusern – mit Abdecken, Spachteln und Endreinigung.</p></article>
+      <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div><h3>Fassadenanstrich</h3><p>Schutz und neuer Glanz für Ihr Haus: Reinigung, Rissbehandlung und langlebige Fassadenfarben.</p></article>
+      <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h12v16H4z"/><path d="M16 7h4v13h-4"/><path d="M8 8h4M8 12h4"/></svg></div><h3>Tapezierarbeiten</h3><p>Raufaser, Vlies oder Designtapete – sauber verklebt, auf Stoß und ohne Blasen.</p></article>
+      <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M10 7l7 7"/></svg></div><h3>Lackierarbeiten</h3><p>Türen, Fenster, Heizkörper und Geländer – geschliffen, grundiert und hochwertig lackiert.</p></article>
+      <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 14c2-3 4 1 6-2s3-1 4 0"/></svg></div><h3>Dekor & Spachteltechnik</h3><p>Kalkputz, Lasuren und Glätt­techniken für Räume mit Charakter.</p></article>
+      <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><h3>Renovierung bei Auszug</h3><p>Schnell und zuverlässig zur Wohnungsübergabe – auch kurzfristig.</p></article>
+    </div>
+    <p style="margin-top:1.4rem;font-size:.85rem" class="lead"><i class="ph">Leistungsliste mit Herrn Meissner abstimmen und ggf. anpassen</i></p>
+  </div>
+</section>
+
+<section id="ablauf" class="steps-sec">
+  <div class="wrap">
+    <span class="eyebrow">So arbeiten wir</span>
+    <h2>In vier Schritten zum fertigen Raum</h2>
+    <div class="steps">
+      <div class="step reveal"><h3>Anfrage</h3><p>Rufen Sie an oder schreiben Sie uns – gerne mit ein paar Fotos.</p></div>
+      <div class="step reveal"><h3>Besichtigung</h3><p>Wir kommen vorbei, beraten zu Farben und Material und messen auf.</p></div>
+      <div class="step reveal"><h3>Festpreis-Angebot</h3><p>Sie erhalten ein klares, schriftliches Angebot – ohne versteckte Kosten.</p></div>
+      <div class="step reveal"><h3>Ausführung</h3><p>Pünktlich, sauber, mit Abdeckung aller Möbel und besenreiner Übergabe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-uns">
+  <div class="wrap about">
+    <div class="photo-ph reveal">Foto: Claus J. Meissner bei der Arbeit<br><i class="ph">vom Kunden einholen</i></div>
+    <div class="reveal">
+      <span class="eyebrow">Über uns</span>
+      <h2>Ihr Malermeister aus Frankfurt</h2>
+      <p class="lead">Seit <i class="ph">Gründungsjahr</i> steht Claus J. Meissner für ehrliches Malerhandwerk in Frankfurt und Umgebung. Als Meisterbetrieb legen wir Wert auf persönliche Beratung, hochwertige Materialien und eine Baustelle, die so sauber ist, wie wir sie vorgefunden haben.</p>
+      <ul class="checks">
+        <li>Meisterbetrieb, eingetragen in der Handwerkskammer</li>
+        <li>Fester Ansprechpartner vom Angebot bis zur Abnahme</li>
+        <li>Emissionsarme, allergikerfreundliche Farben auf Wunsch</li>
+        <li>Termintreue und schriftlicher Festpreis</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="referenzen" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Referenzen</span>
+    <h2>Ein Blick auf unsere Arbeit</h2>
+    <div class="refs">
+      <div class="photo-ph big">Projektfoto (z. B. Fassade vorher/nachher)</div>
+      <div class="photo-ph">Wohnzimmer</div>
+      <div class="photo-ph">Treppenhaus</div>
+      <div class="photo-ph">Lackierte Türen</div>
+      <div class="photo-ph">Dekortechnik</div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <span class="eyebrow">Einsatzgebiet</span>
+    <h2>In Frankfurt und Umgebung für Sie da</h2>
+    <p class="lead">Unser Betrieb sitzt in der Liederbacher Straße – von dort sind wir schnell bei Ihnen.</p>
+    <div class="chips">
+      <span>Höchst</span><span>Unterliederbach</span><span>Sossenheim</span><span>Nied</span><span>Griesheim</span><span>Zeilsheim</span><span>Sindlingen</span><span>Frankfurt-Innenstadt</span><span>Liederbach</span><span>Kelkheim</span><span>Hofheim</span><span>Bad Soden</span>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow">Kontakt</span>
+      <h2>Lassen Sie uns über Ihr Projekt sprechen</h2>
+      <p class="lead">Besichtigung und Angebot sind kostenlos und unverbindlich.</p>
+      <div class="info">
+        <div><span class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2"/></svg></span><span><small>Telefon</small><a href="tel:+4969000000">069 <i class="ph">Nummer</i></a></span></div>
+        <div><span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>E-Mail</small><a href="mailto:info@malermeister-meissner.de">info@malermeister-meissner.de</a> <i class="ph">prüfen</i></span></div>
+        <div><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Adresse</small>Liederbacher Str. <i class="ph">Nr.</i><br><i class="ph">PLZ</i> Frankfurt am Main</span></div>
+        <div><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Erreichbarkeit</small>Mo–Fr <i class="ph">7:00–17:00</i> Uhr</span></div>
+      </div>
+    </div>
+    <form id="form">
+      <div class="row">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      </div>
+      <label>E-Mail<input name="email" type="email" required autocomplete="email"></label>
+      <label>Worum geht es?
+        <select name="art"><option>Innenanstrich</option><option>Fassade</option><option>Tapezieren</option><option>Lackierarbeiten</option><option>Sonstiges</option></select>
+      </label>
+      <label>Ihre Nachricht<textarea name="msg" rows="4" placeholder="z. B. 3-Zimmer-Wohnung, ca. 75 m², Wände und Decken weiß"></textarea></label>
+      <label class="consent"><input type="checkbox" required> Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden (siehe Datenschutz).</label>
+      <button class="btn btn-primary" type="submit">Anfrage senden</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<a href="tel:+4969000000" class="btn btn-primary mobile-call">☎ Jetzt anrufen</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><strong style="color:#fff;font-family:var(--serif);font-size:1.1rem">Malermeister Claus J. Meissner</strong><br>Liederbacher Str. <i class="ph">Nr.</i> · Frankfurt am Main</div>
+      <div><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></div>
+    </div>
+    <div class="copy">© <span id="y"></span> Malermeister Claus J. Meissner</div>
+  </div>
+</footer>
+
+<script>
+const b=document.querySelector('.burger'),m=document.querySelector('.menu');
+b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};
+m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Ohne Server: Formular öffnet E-Mail-Programm. Für Live-Betrieb z. B. PHP-Mailer beim Hoster nutzen.
+document.getElementById('form').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+location.href='mailto:info@malermeister-meissner.de?subject='+encodeURIComponent('Anfrage: '+f.get('art'))+'&body='+encodeURIComponent(`Name: ${f.get('name')}\nTelefon: ${f.get('tel')}\nE-Mail: ${f.get('email')}\n\n${f.get('msg')}`)};
+</script>
+</body>
+</html>
